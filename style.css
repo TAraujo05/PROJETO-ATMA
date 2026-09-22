@@ -1,0 +1,2001 @@
+/* =========================================================
+   ATMA MOVIMENTO
+   LANDING PAGE
+   IDENTIDADE: PRETO + BRANCO + VERDE
+========================================================= */
+
+
+/* =========================================================
+   1. VARIÁVEIS
+========================================================= */
+
+:root {
+  --green: #65a900;
+  --green-hover: #568f00;
+  --green-light: #89c52a;
+  --green-soft: #f0f7e6;
+
+  --black: #000000;
+  --dark: #101010;
+  --dark-soft: #181818;
+
+  --white: #ffffff;
+  --off-white: #f7f7f5;
+
+  --gray-100: #f2f2f0;
+  --gray-200: #e4e4e1;
+  --gray-300: #ccccca;
+  --gray-500: #777777;
+  --gray-600: #626262;
+  --gray-800: #292929;
+
+  --text: #111111;
+  --muted: #666666;
+
+  --container: 1180px;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 30px;
+
+  --shadow-sm:
+    0 6px 20px rgba(0, 0, 0, 0.06);
+
+  --shadow-md:
+    0 18px 45px rgba(0, 0, 0, 0.11);
+
+  --shadow-green:
+    0 12px 35px rgba(101, 169, 0, 0.25);
+
+  --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background: var(--white);
+
+  color: var(--text);
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 7vw, 5.3rem);
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  letter-spacing: -0.045em;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   3. CONTAINER
+========================================================= */
+
+.container {
+  width: min(
+    calc(100% - 40px),
+    var(--container)
+  );
+
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   4. ACESSIBILIDADE
+========================================================= */
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   5. BOTÕES
+========================================================= */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 0.85rem 1.55rem;
+
+  border: 1px solid transparent;
+
+  border-radius: 999px;
+
+  font-size: 0.92rem;
+
+  font-weight: 800;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--black);
+}
+
+.btn-primary:hover {
+  background: var(--green-hover);
+  color: var(--white);
+
+  box-shadow: var(--shadow-green);
+}
+
+.btn-secondary {
+  background: transparent;
+
+  border-color: var(--gray-300);
+
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-100);
+}
+
+
+/* =========================================================
+   6. HEADER
+========================================================= */
+
+.header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.96);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.header-container {
+  min-height: 78px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1.2rem;
+}
+
+
+/* LOGO DO HEADER */
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.logo img {
+  display: block;
+
+  width: auto;
+
+  height: 46px;
+
+  object-fit: contain;
+}
+
+
+/* MENU */
+
+.nav {
+  display: none;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.header-container > .btn {
+  min-height: 42px;
+
+  padding: 0.65rem 1rem;
+
+  font-size: 0.8rem;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   7. HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: calc(100vh - 78px);
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 70px 0 85px;
+
+  background: var(--black);
+
+  color: var(--white);
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  top: -280px;
+  right: -240px;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(101, 169, 0, 0.15);
+
+  filter: blur(10px);
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: -250px;
+  bottom: -350px;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(101, 169, 0, 0.06);
+}
+
+.hero-container {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 3rem;
+
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-tag {
+  margin-bottom: 1rem;
+
+  color: var(--green);
+
+  font-size: 0.76rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-bottom: 1.5rem;
+
+  color: var(--white);
+}
+
+.hero-description {
+  max-width: 610px;
+
+  margin-bottom: 2rem;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size:
+    clamp(1rem, 2vw, 1.2rem);
+}
+
+
+/* BOTÕES HERO */
+
+.hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.8rem;
+
+  margin-bottom: 2.2rem;
+}
+
+.hero .btn-secondary {
+  color: var(--white);
+
+  border-color:
+    rgba(255, 255, 255, 0.25);
+}
+
+.hero .btn-secondary:hover {
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+
+/* BENEFÍCIOS HERO */
+
+.hero-benefits {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.7rem;
+
+  margin-bottom: 2rem;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 0.9rem;
+}
+
+.hero-benefits span {
+  position: relative;
+
+  padding-left: 1.4rem;
+}
+
+.hero-benefits span::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  transform:
+    translateY(-50%);
+}
+
+
+/* +MOVI -DOR +VIDA */
+
+.atma-signature {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 0;
+}
+
+.atma-signature span {
+  padding: 0.2rem 0.9rem;
+
+  color: var(--white);
+
+  font-size: 0.85rem;
+
+  font-style: italic;
+
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+}
+
+.atma-signature span:first-child {
+  padding-left: 0;
+}
+
+.atma-signature span:not(:last-child) {
+  border-right:
+    1px solid var(--green);
+}
+
+.atma-signature strong {
+  color: var(--green);
+
+  font-size: 1.2em;
+}
+
+
+/* =========================================================
+   8. FOTO DO HERO
+========================================================= */
+
+.hero-image {
+  width: 100%;
+}
+
+.image-placeholder {
+  min-height: 370px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      145deg,
+      #161616,
+      #070707
+    );
+
+  color:
+    rgba(255, 255, 255, 0.38);
+
+  font-size: 0.9rem;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   9. CONFIGURAÇÃO DAS SEÇÕES
+========================================================= */
+
+section {
+  padding: 90px 0;
+}
+
+.section-header {
+  max-width: 780px;
+
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  margin-bottom: 1.2rem;
+}
+
+.section-header p {
+  max-width: 680px;
+}
+
+.section-tag {
+  margin-bottom: 0.9rem;
+
+  color: var(--green);
+
+  font-size: 0.74rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   10. SOBRE
+========================================================= */
+
+.about {
+  background: var(--off-white);
+}
+
+.pillars {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 1rem;
+}
+
+.pillar-card {
+  padding: 1.8rem;
+
+  background: var(--white);
+
+  border: 1px solid var(--gray-200);
+
+  border-radius: var(--radius-md);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(101, 169, 0, 0.5);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.pillar-card h3 {
+  margin-bottom: 0.8rem;
+}
+
+.pillar-card p {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   11. MODALIDADES
+========================================================= */
+
+.modalities {
+  background: var(--white);
+}
+
+.modalities-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 1rem;
+}
+
+.modality-card {
+  min-height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 2rem;
+
+  background: var(--white);
+
+  border:
+    1px solid var(--gray-200);
+
+  border-radius:
+    var(--radius-md);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.modality-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(101, 169, 0, 0.5);
+
+  box-shadow: var(--shadow-md);
+}
+
+.modality-card h3 {
+  margin-bottom: 1rem;
+}
+
+.modality-card p {
+  margin-bottom: 1.3rem;
+}
+
+.modality-card ul {
+  margin-bottom: 0;
+
+  padding-left: 1.2rem;
+}
+
+.modality-card li {
+  margin-bottom: 0.45rem;
+
+  color: var(--muted);
+}
+
+.section-action {
+  margin-top: 2rem;
+}
+
+
+/* =========================================================
+   12. MÉTODO MOVI
+========================================================= */
+
+.method {
+  background: var(--black);
+
+  color: var(--white);
+}
+
+.method h2,
+.method h3,
+.method strong {
+  color: var(--white);
+}
+
+.method p,
+.method li {
+  color:
+    rgba(255, 255, 255, 0.68);
+}
+
+.method-flow {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 0.8rem;
+
+  margin: 3rem 0;
+}
+
+.method-step {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.2rem;
+
+  padding: 1.2rem;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius:
+    var(--radius-md);
+}
+
+.method-step span {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  color: var(--black);
+
+  font-size: 0.76rem;
+
+  font-weight: 900;
+}
+
+.method-info {
+  max-width: 720px;
+}
+
+.method-info ul {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem 1.8rem;
+
+  padding-left: 1.2rem;
+}
+
+
+/* =========================================================
+   13. COMO FUNCIONA
+========================================================= */
+
+.how-it-works {
+  background: var(--off-white);
+}
+
+.steps {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 1rem;
+}
+
+.step {
+  padding: 1.8rem;
+
+  background: var(--white);
+
+  border:
+    1px solid var(--gray-200);
+
+  border-radius:
+    var(--radius-md);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
+}
+
+.step:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(101, 169, 0, 0.5);
+}
+
+.step-number {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color: var(--green);
+
+  font-size: 0.82rem;
+
+  font-weight: 900;
+}
+
+.step h3 {
+  margin-bottom: 0.7rem;
+}
+
+.step p {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   14. MFIT
+========================================================= */
+
+.app-section {
+  background: var(--white);
+}
+
+.app-container {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 3rem;
+
+  align-items: center;
+}
+
+.app-content {
+  max-width: 600px;
+}
+
+.app-content ul {
+  margin: 1.4rem 0 2rem;
+
+  padding-left: 1.2rem;
+}
+
+.app-content li {
+  margin-bottom: 0.45rem;
+
+  color: var(--muted);
+}
+
+.app-content blockquote {
+  margin: 2rem 0 0;
+
+  padding:
+    1.3rem
+    1.5rem;
+
+  border-left:
+    4px solid var(--green);
+
+  border-radius:
+    0
+    var(--radius-sm)
+    var(--radius-sm)
+    0;
+
+  background:
+    var(--green-soft);
+
+  color: var(--text);
+
+  font-weight: 700;
+}
+
+.phone-placeholder {
+  width: min(100%, 300px);
+
+  min-height: 520px;
+
+  margin-inline: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  border:
+    10px solid var(--black);
+
+  border-radius: 42px;
+
+  background: var(--gray-100);
+
+  color: var(--gray-500);
+
+  text-align: center;
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   15. PLANOS
+========================================================= */
+
+.pricing {
+  background: var(--off-white);
+}
+
+.pricing-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 1rem;
+}
+
+.pricing-card {
+  position: relative;
+
+  min-height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 2rem;
+
+  background: var(--white);
+
+  border:
+    1px solid var(--gray-200);
+
+  border-radius:
+    var(--radius-md);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(101, 169, 0, 0.5);
+
+  box-shadow: var(--shadow-md);
+}
+
+.pricing-card-featured {
+  border:
+    2px solid var(--green);
+}
+
+.pricing-label {
+  align-self: flex-start;
+
+  margin-bottom: 1rem;
+
+  padding: 0.4rem 0.75rem;
+
+  border-radius: 999px;
+
+  background: var(--green);
+
+  color: var(--black);
+
+  font-size: 0.7rem;
+
+  font-weight: 900;
+}
+
+.price {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0.3rem;
+
+  margin: 1.4rem 0;
+
+  color: var(--text);
+}
+
+.price span {
+  margin-top: 0.5rem;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+}
+
+.price strong {
+  font-size: 3.2rem;
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+}
+
+.pricing-card ul {
+  flex-grow: 1;
+
+  padding-left: 1.2rem;
+
+  margin-bottom: 2rem;
+}
+
+.pricing-card li {
+  margin-bottom: 0.5rem;
+
+  color: var(--muted);
+}
+
+.pricing-card .btn {
+  width: 100%;
+
+  margin-top: auto;
+}
+
+.pricing-note {
+  max-width: 720px;
+
+  margin: 2rem auto 0;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   16. PARA QUEM É
+========================================================= */
+
+.audience {
+  background: var(--white);
+}
+
+.audience-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 0.8rem;
+}
+
+.audience-grid > div {
+  padding: 1.25rem 1.4rem;
+
+  border:
+    1px solid var(--gray-200);
+
+  border-radius:
+    var(--radius-md);
+
+  background: var(--white);
+
+  font-weight: 650;
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.audience-grid > div:hover {
+  transform: translateY(-2px);
+
+  background: var(--green-soft);
+
+  border-color:
+    rgba(101, 169, 0, 0.45);
+}
+
+
+/* =========================================================
+   17. DIFERENCIAIS
+========================================================= */
+
+.benefits {
+  background: var(--off-white);
+}
+
+.benefits-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 1rem;
+}
+
+.benefits-grid article {
+  padding: 1.8rem;
+
+  background: var(--white);
+
+  border:
+    1px solid var(--gray-200);
+
+  border-radius:
+    var(--radius-md);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
+}
+
+.benefits-grid article:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(101, 169, 0, 0.45);
+}
+
+.benefits-grid h3 {
+  margin-bottom: 0.8rem;
+}
+
+.benefits-grid p {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   18. MANIFESTO
+========================================================= */
+
+.manifesto {
+  background: var(--black);
+
+  color: var(--white);
+
+  text-align: center;
+}
+
+.manifesto-container {
+  max-width: 900px;
+}
+
+.manifesto h2 {
+  margin-bottom: 2rem;
+
+  color: var(--white);
+
+  font-size:
+    clamp(
+      3rem,
+      9vw,
+      6rem
+    );
+
+  letter-spacing: -0.065em;
+}
+
+.manifesto p {
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 1.05rem;
+}
+
+.manifesto strong {
+  display: block;
+
+  margin: 2rem 0;
+
+  color: var(--green);
+
+  font-size:
+    clamp(
+      1.3rem,
+      3vw,
+      2rem
+    );
+}
+
+.manifesto-signature {
+  margin-top: 3rem;
+
+  color:
+    rgba(255, 255, 255, 0.72) !important;
+
+  font-size: 0.85rem !important;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   19. FAQ
+========================================================= */
+
+.faq {
+  background: var(--white);
+}
+
+.faq-list {
+  max-width: 850px;
+}
+
+.faq details {
+  border-bottom:
+    1px solid var(--gray-200);
+}
+
+.faq summary {
+  position: relative;
+
+  padding:
+    1.5rem
+    2.8rem
+    1.5rem
+    0;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  color: var(--text);
+
+  font-weight: 700;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+
+  position: absolute;
+
+  top: 50%;
+  right: 0;
+
+  color: var(--green);
+
+  font-size: 1.6rem;
+
+  font-weight: 600;
+
+  transform:
+    translateY(-50%);
+
+  transition:
+    transform var(--transition);
+}
+
+.faq details[open] summary::after {
+  transform:
+    translateY(-50%)
+    rotate(45deg);
+}
+
+.faq details p {
+  max-width: 720px;
+
+  margin-bottom: 0;
+
+  padding-bottom: 1.5rem;
+}
+
+
+/* =========================================================
+   20. CTA FINAL
+========================================================= */
+
+.final-cta {
+  padding: 100px 0;
+
+  background: var(--white);
+}
+
+.final-cta-container {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    3.5rem
+    1.5rem;
+
+  border-radius:
+    var(--radius-lg);
+
+  background: var(--black);
+
+  color: var(--white);
+
+  text-align: center;
+}
+
+.final-cta-container::before {
+  content: "";
+
+  position: absolute;
+
+  top: -180px;
+  right: -120px;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(101, 169, 0, 0.18);
+}
+
+.final-cta h2,
+.final-cta p,
+.final-cta-actions {
+  position: relative;
+
+  z-index: 2;
+}
+
+.final-cta h2 {
+  max-width: 760px;
+
+  margin:
+    0 auto
+    1.2rem;
+
+  color: var(--white);
+}
+
+.final-cta p {
+  max-width: 650px;
+
+  margin:
+    0 auto
+    2rem;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+}
+
+.final-cta-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.8rem;
+
+  align-items: stretch;
+}
+
+.final-cta .btn-secondary {
+  color: var(--white);
+
+  border-color:
+    rgba(255, 255, 255, 0.25);
+}
+
+.final-cta .btn-secondary:hover {
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   21. FOOTER
+========================================================= */
+
+/*
+   O footer é claro de propósito.
+
+   A ATMALOGO2-SF.png possui elementos escuros.
+   Em um footer preto esses elementos poderiam desaparecer.
+*/
+
+.footer {
+  padding:
+    60px 0
+    30px;
+
+  background: var(--off-white);
+
+  color: var(--text);
+
+  border-top:
+    1px solid var(--gray-200);
+}
+
+.footer-container {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 2.5rem;
+}
+
+.footer-brand {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.footer-logo {
+  display: block;
+
+  width: 135px;
+  height: auto;
+
+  margin-bottom: 1.3rem;
+
+  object-fit: contain;
+}
+
+.footer-brand p {
+  margin-bottom: 0.4rem;
+
+  color: var(--gray-600);
+
+  font-size: 0.82rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.footer a {
+  color: var(--gray-600);
+
+  transition:
+    color var(--transition);
+}
+
+.footer a:hover {
+  color: var(--green);
+}
+
+.footer ul {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.7rem;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.copyright {
+  padding-top: 1.5rem;
+
+  margin-bottom: 0;
+
+  border-top:
+    1px solid var(--gray-200);
+
+  color: var(--gray-500);
+
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   22. BOTÃO FLUTUANTE
+========================================================= */
+
+.whatsapp-floating {
+  position: fixed;
+
+  right: 18px;
+  bottom: 18px;
+
+  z-index: 999;
+
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.72rem 1rem;
+
+  border-radius: 999px;
+
+  background: var(--green);
+
+  color: var(--black);
+
+  font-size: 0.8rem;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+}
+
+.whatsapp-floating:hover {
+  transform: translateY(-3px);
+
+  background: var(--green-hover);
+
+  color: var(--white);
+
+  box-shadow: var(--shadow-green);
+}
+
+
+/* =========================================================
+   23. TABLET
+========================================================= */
+
+@media (min-width: 640px) {
+
+  .container {
+    width:
+      min(
+        calc(100% - 64px),
+        var(--container)
+      );
+  }
+
+  .hero-benefits {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    gap: 1rem 1.8rem;
+  }
+
+  .pillars {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .modalities-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .audience-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .final-cta-container {
+    padding:
+      4rem
+      3rem;
+  }
+
+  .final-cta-actions {
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: center;
+  }
+
+}
+
+
+/* =========================================================
+   24. DESKTOP
+========================================================= */
+
+@media (min-width: 900px) {
+
+  section {
+    padding: 110px 0;
+  }
+
+
+  /* HEADER */
+
+  .header-container {
+    min-height: 84px;
+  }
+
+  .logo img {
+    height: 58px;
+  }
+
+  .nav {
+    display: block;
+
+    margin-left: auto;
+  }
+
+  .nav-list {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5rem;
+  }
+
+  .nav-list a {
+    position: relative;
+
+    color:
+      rgba(255, 255, 255, 0.68);
+
+    font-size: 0.83rem;
+
+    font-weight: 650;
+
+    transition:
+      color var(--transition);
+  }
+
+  .nav-list a:hover {
+    color: var(--white);
+  }
+
+  .nav-list a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--green);
+
+    transition:
+      width var(--transition);
+  }
+
+  .nav-list a:hover::after {
+    width: 100%;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height:
+      calc(100vh - 84px);
+
+    padding:
+      90px 0;
+  }
+
+  .hero-container {
+    grid-template-columns:
+      minmax(0, 1.08fr)
+      minmax(350px, 0.92fr);
+
+    gap: 5rem;
+  }
+
+  .image-placeholder {
+    min-height: 570px;
+  }
+
+
+  /* MODALIDADES */
+
+  .modalities-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  /* MÉTODO */
+
+  .method-flow {
+    grid-template-columns:
+      repeat(5, 1fr);
+
+    gap: 0;
+  }
+
+  .method-step {
+    position: relative;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding:
+      1rem
+      2rem
+      1rem
+      0;
+
+    border: none;
+
+    border-radius: 0;
+  }
+
+  .method-step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 31px;
+
+    left: 50px;
+    right: 12px;
+
+    height: 1px;
+
+    background:
+      rgba(101, 169, 0, 0.42);
+  }
+
+  .method-step span {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 1rem;
+  }
+
+
+  /* COMO FUNCIONA */
+
+  .steps {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  /* MFIT */
+
+  .app-container {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 6rem;
+  }
+
+
+  /* PLANOS */
+
+  .pricing-grid {
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    align-items: stretch;
+  }
+
+  .pricing-card-featured {
+    transform:
+      translateY(-12px);
+  }
+
+  .pricing-card-featured:hover {
+    transform:
+      translateY(-17px);
+  }
+
+
+  /* PARA QUEM */
+
+  .audience-grid {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+
+  /* DIFERENCIAIS */
+
+  .benefits-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  /* FOOTER */
+
+  .footer-container {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    align-items: start;
+  }
+
+  .footer nav {
+    justify-self: end;
+  }
+
+  .footer ul {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+  }
+
+  .copyright {
+    grid-column:
+      1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   25. DESKTOP GRANDE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .hero-container {
+    gap: 7rem;
+  }
+
+  .steps {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   26. MOBILE PEQUENO
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .container {
+    width:
+      calc(100% - 30px);
+  }
+
+  .header-container {
+    min-height: 70px;
+
+    gap: 0.7rem;
+  }
+
+  .logo img {
+    height: 38px;
+  }
+
+  .header-container > .btn {
+    min-height: 38px;
+
+    padding:
+      0.5rem
+      0.75rem;
+
+    font-size: 0.7rem;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding:
+      55px 0
+      70px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .atma-signature span {
+    padding:
+      0.2rem
+      0.6rem;
+
+    font-size: 0.72rem;
+  }
+
+  .atma-signature span:first-child {
+    padding-left: 0;
+  }
+
+  .image-placeholder {
+    min-height: 300px;
+  }
+
+  .phone-placeholder {
+    min-height: 460px;
+  }
+
+  .footer-logo {
+    width: 110px;
+  }
+
+}
+
+
+/* =========================================================
+   27. ACESSIBILIDADE: REDUZIR ANIMAÇÕES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
